@@ -1,3 +1,41 @@
+
+var formulario1 = document.getElementById('formularioAgregar');
+
+formulario1.addEventListener('submit', function (e) {
+    alert('SALVANDO');
+
+    e.preventDefault()
+
+    var datosenviar = {
+        "cedula": document.getElementById("cedula").value,
+        "correoelectronico": document.getElementById("correoelectronico").value,
+        "telefono": document.getElementById("telefono").value,
+        "telefonocelular": document.getElementById("telefonocelular").value,
+        "fechanacimiento": document.getElementById("fechanacimiento").value,
+        "sexo": document.getElementById("sexo").value,
+        "direccion": document.getElementById("direccion").value,
+        "nombre": document.getElementById("nombre").value,
+        "apellidopaterno": document.getElementById("apellidopaterno").value,
+        "apellidomaterno": document.getElementById("apellidomaterno").value,
+        "nacionalidad": document.getElementById("nacionalidad").value,
+        "idCarreras": document.getElementById("idCarreras").value,
+        "usuario": document.getElementById("usuario").value
+
+    }
+    console.log(datosenviar);
+
+    fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarEstudiantes.php",
+        {
+            method: 'POST',
+            body: JSON.stringify(datosenviar)
+        })
+
+        .then(respuesta => respuesta.json())
+        .then((datosrespuesta) => {
+            console.log('Datos', datosrespuesta)
+        })
+        .catch(console.log)
+})
 //Declaracion de variable u objetos
 
 var contenidoTablaResultado = document.querySelector('#resultados');
@@ -40,10 +78,21 @@ function setTable(datos) {
                      
                      ||
                      <button id="Edit" type="button" class="btn btn-primary" 
-                     onclick="actualizar('${valor.id}','${valor.cedula}',
-                     '${valor.correoelectronico}','${valor.telefono}','${valor.direccion}'
-                     ,'${valor.nombre}','${valor.apellidopaterno}','${valor.apellidomaterno}'
-                     ,'${valor.idCarreras}')">Actualizar</button>
+                     onclick="actualizar('${valor.id}'
+                     ,'${valor.cedula}'
+                     ,'${valor.correoelectronico}'
+                     ,'${valor.telefono}'
+                     ,'${valor.telefonocelular}'
+                     ,'${valor.fechanacimiento}'
+                     ,'${valor.sexo}'
+                     ,'${valor.direccion}'
+                     ,'${valor.nombre}'
+                     ,'${valor.apellidopaterno}'
+                     ,'${valor.apellidomaterno}'
+                     ,'${valor.nacionalidad}'
+                     ,'${valor.idCarreras}'
+                     ,'${valor.usuario}'
+                     )">Actualizar</button>
                    </td>   
                 </tr>`;
     }
@@ -51,8 +100,8 @@ function setTable(datos) {
 
 const myModal = new bootstrap.Modal(document.getElementById('modalId'));
 
-function actualizar(id, cedula, correoelectronico, telefono,telefonocelular,fechanacimiento,
-    direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, usuario, idCarreras) {
+function actualizar(id, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo,
+    direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, idCarreras, usuario) {
     console.log(actualizar);
     myModal.show();
     document.getElementById("id").value = id;
@@ -66,7 +115,7 @@ function actualizar(id, cedula, correoelectronico, telefono,telefonocelular,fech
     document.getElementById("nombre").value = nombre;
     document.getElementById("apellidopaterno").value = apellidopaterno;
     document.getElementById("apellidomaterno").value = apellidomaterno;
-    document.getElementById("nacionalidad").value=nacionalidad;
+    document.getElementById("nacionalidad").value = nacionalidad;
     document.getElementById("idCarreras").value = idCarreras;
     document.getElementById("usuario").value = usuario;
 
@@ -102,7 +151,7 @@ formulario.addEventListener('submit', function (e) {
         correoelectronico: correoelectronico,
         telefono: telefono,
         telefonocelular: telefonocelular,
-        fechanacimiento:fechanacimiento,
+        fechanacimiento: fechanacimiento,
         sexo: sexo,
         direccion: direccion,
         nombre: nombre,
@@ -159,3 +208,4 @@ function eliminar(id) {
 }
 
 cargarDatos();
+cargarDatosSelect();

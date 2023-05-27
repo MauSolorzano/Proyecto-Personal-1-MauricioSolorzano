@@ -1,14 +1,7 @@
-/*{
-"id": "1834",
-"nombre": "Andresgf editar",
-"descripcion": "wadawdav",
-"tiempo": "1",
-"usuario": "profesor Mario"
-} */
 var contenidoTablaResultado = document.querySelector('#resultados');
 function cargarDatos() {
     // alert('Cargue datos');
-    fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaCurso.php")//url de peticion de dATOS
+    fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaUsuarios.php")//url de peticion de dATOS
         .then(respuesta => respuesta.json())//respuesta recibe los datps en formato json 
         .then((datosrespuesta) => {
             setTable(datosrespuesta.data)//lo envio para la funcion para darle tratamiento a los datos
@@ -25,17 +18,14 @@ function setTable(datos) {
         contenidoTablaResultado.innerHTML += `
                  <tr class="table-primary" >
                      <td scope="row">${valor.id}</td>
-                    <td>${valor.nombre}</td>
-                    <td>${valor.descripcion}</td>
-                    <td>${valor.tiempo}</td>
-                    <td>${valor.usuario}</td>
+                    <td>${valor.name}</td>
+                    <td>${valor.email}</td>
+                    <td>${valor.password}</td>
 
-                    <td><button type="button" class="btn btn-danger" onclick="eliminar('${valor.id}')">Borrar</button>
-                     
-                     ||
-                     <button id="Edit" type="button" class="btn btn-primary" 
-                     onclick="actualizar('${valor.id}','${valor.nombre}','${valor.descripcion}'
-                     ,'${valor.tiempo}','${valor.usuario}')">Actualizar</button>
+                    <td>
+                    <button id="Edit" type="button" class="btn btn-primary" 
+                     onclick="actualizar('${valor.name}','${valor.id}',
+                     '${valor.password}')">Actualizar</button>
                    </td>   
                 </tr>`;
     }
@@ -43,14 +33,12 @@ function setTable(datos) {
 
 const myModal = new bootstrap.Modal(document.getElementById('modalId'));
 
-function actualizar(id, nombre, descripcion, tiempo, usuario) {
+function actualizar(id, name, password) {
     console.log(actualizar);
     myModal.show();
     document.getElementById("id").value = id;
-    document.getElementById("nombre").value = nombre;
-    document.getElementById("descripcion").value = descripcion;
-    document.getElementById("tiempo").value = tiempo;
-    document.getElementById("usuario").value = usuario;
+    document.getElementById("name").value = name;
+    document.getElementById("password").value = password;
 
 
 }
@@ -64,25 +52,22 @@ formulario.addEventListener('submit', function (e) {
     alert('Actualizando datos');
     console.log(datosenviar);
     let id = document.getElementById('id').value;
-    let nombre = document.getElementById('nombre').value;
-    let descripcion = document.getElementById('descripcion').value;
-    let tiempo = document.getElementById('tiempo').value;
-    let usuario = document.getElementById('usuario').value;
+    let name = document.getElementById('name').value;
+    let password = document.getElementById('password').value;
 
 
     //Se guardan los datos recuperados en una variable
     var datosenviar = {
         id: id,
-        nombre: nombre,
-        descripcion: descripcion,
-        tiempo: tiempo,
-        usuario: usuario,
+        name: name,
+        password: password
+        
 
     };
 
     console.log(datosenviar);
 
-    fetch("https://paginas-web-cr.com/ApiPHP/apis/ActualizarCursos.php",
+    fetch("https://paginas-web-cr.com/ApiPHP/apis/ActualizarUsuarios.php",
         {
             method: 'POST',
             body: JSON.stringify(datosenviar)
@@ -103,26 +88,6 @@ formulario.addEventListener('submit', function (e) {
             alert("Error al enviar los datos Catch");
         });
 });
-function eliminar(id) {
-    alert('Esta a punto de eliminar ' + id)
-    var datosenviar = {
-        id: id
-    }
 
-    fetch("https://paginas-web-cr.com/ApiPHP/apis/BorrarCursos.php", {
-        method: "POST",
-        body: JSON.stringify(datosenviar)
-
-    })
-        .then(respuesta => respuesta.json())//recibe los datos en formato json
-        .then((datosrepuesta) => {
-            alert("Datos eliminados correctamente.");
-
-
-            contenidoTablaResultado.innerHTML = ""; // Limpia el contenido de la tabla
-            cargarDatos();
-        })
-        .catch(console.log)//muestra errores
-}
 
 cargarDatos();
