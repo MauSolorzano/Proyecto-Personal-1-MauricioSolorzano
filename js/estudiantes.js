@@ -39,7 +39,7 @@ function setTable(datos) {
 
 
 
-                    <td><button type="button" class="btn btn-danger" onclick="mostrarModalEliminar('${valor.id}')">Borrar</button>
+                    <td><button type="button" class="btn btn-danger" onclick="mostrarModalEliminar('${valor.id}','${valor.nombre}')">Borrar</button>
                      
                      ||
                      <button id="Edit" type="button" class="btn btn-primary" 
@@ -151,14 +151,15 @@ formulario.addEventListener('submit', function (e) {
         });
 });
 const modalEliminar = new bootstrap.Modal(document.getElementById('modalEliminar'))
-function mostrarModalEliminar(id, nombre) {
-    modalEliminar.show();
+    function mostrarModalEliminar(id, nombre) {
+      modalEliminar.show();
 
-    document.getElementById("idEliminar").value = id;
-    document.getElementById("nombreEliminar").value = nombre;
-}
-function eliminar(id) {
-    alert('Esta a punto de eliminar ' + id)
+      document.getElementById("idEliminar").value = id;
+      document.getElementById("nombreEliminar").value = nombre;
+    }
+function eliminar() {
+    let id = document.getElementById("idEliminar").value;
+
     var datosenviar = {
         id: id
     }
