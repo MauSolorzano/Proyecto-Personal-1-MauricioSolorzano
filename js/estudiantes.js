@@ -1,4 +1,6 @@
 
+
+
 //Declaracion de variable u objetos
 
 var contenidoTablaResultado = document.querySelector('#resultados');
@@ -37,7 +39,7 @@ function setTable(datos) {
 
 
 
-                    <td><button type="button" class="btn btn-danger" onclick="eliminar('${valor.id}')">Borrar</button>
+                    <td><button type="button" class="btn btn-danger" onclick="mostrarModalEliminar('${valor.id}')">Borrar</button>
                      
                      ||
                      <button id="Edit" type="button" class="btn btn-primary" 
@@ -148,6 +150,13 @@ formulario.addEventListener('submit', function (e) {
             alert("Error al enviar los datos Catch");
         });
 });
+const modalEliminar = new bootstrap.Modal(document.getElementById('modalEliminar'))
+function mostrarModalEliminar(id, nombre) {
+    modalEliminar.show();
+
+    document.getElementById("idEliminar").value = id;
+    document.getElementById("nombreEliminar").value = nombre;
+}
 function eliminar(id) {
     alert('Esta a punto de eliminar ' + id)
     var datosenviar = {
@@ -161,9 +170,7 @@ function eliminar(id) {
     })
         .then(respuesta => respuesta.json())//recibe los datos en formato json
         .then((datosrepuesta) => {
-            alert("Datos eliminados correctamente.");
-
-
+            modalEliminar.hide();
             contenidoTablaResultado.innerHTML = ""; // Limpia el contenido de la tabla
             cargarDatos();
         })

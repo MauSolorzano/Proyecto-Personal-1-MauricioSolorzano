@@ -13,7 +13,21 @@ function cargarGrupo() {
         .catch(console.log)//muestra errores
 }
 cargarGrupo();
-
+/*
+"id": "1234675",
+"cedula": "29292929666",
+"correoelectronico": "MARIO66@GMAIL.COM",
+"telefono": "98982929666",
+"telefonocelular": "24402230666",
+"fechanacimiento": "2023-05-18",
+"sexo": "female666",
+"direccion": "Puerto papa666",
+"nombre": "Mario666",
+"apellidopaterno": "Jimenez666",
+"apellidomaterno": "Jimenez666",
+"idCarreras": "1134",
+"usuario": "Lucas666",
+"nacionalidad": "German666" */
 
 var formulario1 = document.getElementById('formularioAgregar');
 
@@ -40,7 +54,7 @@ formulario1.addEventListener('submit', function (e) {
     }
     console.log(datosenviar);
 
-    fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarEstudiantes.php",
+    fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarProfesores.php",
         {
             method: 'POST',
             body: JSON.stringify(datosenviar)

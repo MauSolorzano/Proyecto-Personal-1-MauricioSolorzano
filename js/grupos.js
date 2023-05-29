@@ -1,4 +1,6 @@
 
+
+
 var contenidoTablaResultado = document.querySelector('#resultados');
 function cargarDatos() {
     // alert('Cargue datos');

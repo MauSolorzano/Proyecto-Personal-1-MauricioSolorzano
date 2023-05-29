@@ -5,7 +5,10 @@
 "tiempo": "1",
 "usuario": "profesor Mario"
 } */
+
+
 var contenidoTablaResultado = document.querySelector('#resultados');
+
 function cargarDatos() {
     // alert('Cargue datos');
     fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaCurso.php")//url de peticion de dATOS
