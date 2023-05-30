@@ -10,6 +10,7 @@
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/index.css">
 
 </head>
 
@@ -29,7 +30,7 @@
                         placeholder="Ingrese la cedula del estudiante">
                     <small id="helpId" class="form-text text-muted">Help text</small>
                 </div>
-                
+
                 <button type="reset" class="btn btn-danger">Limpiar</button>
                 <button type="submit" class="btn btn-primary">Guardar</button>
 
@@ -38,6 +39,7 @@
     </main>
     <footer>
         <!-- place footer here -->
+        <div id="contenidoFooter"></div>
     </footer>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -47,17 +49,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
         </script>
-        <script src="js/agregarGrupo.js"></script>
-        <script>
-            var contenidoMenu = document.querySelector("#contenidoMenu");
-        </script>
-        <script src="js/menu.js">
-            
-        </script>
-        
-        <script>
-            var triggerEl = document.querySelector('#navId a')
-        </script>
+    <script src="js/agregarGrupo.js"></script>
+    <script>
+        var contenidoMenu = document.querySelector("#contenidoMenu");
+        var contenidoFooter = document.querySelector('#contenidoFooter')
+    </script>
+    <script src="js/footer.js"></script>
+    <script src="js/menu.js">
+
+    </script>
+
+    <script>
+        var triggerEl = document.querySelector('#navId a')
+    </script>
 </body>
 
 </html>

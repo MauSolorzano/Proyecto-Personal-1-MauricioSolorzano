@@ -11,25 +11,155 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+  <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
   <header>
     <!-- place navbar here -->
+    <div id="contenidoMenu"></div>
+
   </header>
   <main>
-    <h1>Hola mundo</h1>
+
+    <div class="container-fluid">
+      <div class="carrusel">
+
+        <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true"
+              aria-label="First slide"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img src="img/estudiantes1.jpg" class="w-100 d-block" alt="estudiante1 slide">
+            </div>
+            <div class="carousel-item">
+              <img src="img/estudiantes2.jpg" class="w-100 d-block" alt="estudiante2 slide">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+    <div class="container">
+      <div>
+        <div class="row justify-content-center align-items-center g-2">
+          <div class="col">
+            <h2>Descripcion</h2>
+            <p>
+              Progreso Seguro es una prestigiosa institución académica comprometida con el éxito y el desarrollo
+              integral de sus estudiantes. Nuestro enfoque se basa en proporcionar una educación de calidad que prepare
+              a los estudiantes para enfrentar los desafíos del mundo actual.
+            </p>
+          </div>
+          <div class="col">
+            <h2>Cuerpo docente</h2>
+            <p>
+              Nuestro cuerpo docente está compuesto por profesionales altamente calificados y dedicados, que combinan
+              una sólida formación académica con experiencia en el campo. Nuestros profesores se esfuerzan por brindar
+              una educación de calidad, fomentando el pensamiento crítico, la creatividad y el desarrollo de habilidades
+              prácticas.
+            </p>
+          </div>
+          <div class="col">
+            <h2>Instalaciones</h2>
+            <p>Progreso Seguro cuenta con modernas instalaciones diseñadas para facilitar un entorno de aprendizaje
+              óptimo. Nuestro campus incluye aulas equipadas con tecnología de vanguardia, laboratorios especializados,
+              una biblioteca completa, áreas de estudio colaborativo y espacios deportivos.
+            </p>
+          </div>
+        </div>
+        <div class="listaPropositos">
+          <div class="row justify-content-center align-items-center g-2">
+            <div class="col-2"></div>
+            <div class="col-8">
+              <ul class="list-group">
+                <li class="list-group-item align-items-center justify-content-between align-items-center active">
+                  <h1>Propositos que tenemos como institución.</h1>
+                </li>
+                <li class="list-group-item justify-content-between align-items-center">
+                  <h3>Proporcionar una educación de calidad</h3>
+                  <p> El propósito principal de "El Progreso Seguro" es ofrecer una educación de calidad que sea
+                    rigurosa,
+                    actualizada y relevante para preparar a los estudiantes para los desafíos del mundo actual.</p>
+                </li>
+                <li class="list-group-item  justify-content-between align-items-center">
+                  <h3>Fomentar el desarrollo integral:</h3>
+                  <p>"Progreso Seguro" tiene como propósito no solo el desarrollo académico de los estudiantes, sino
+                    también
+                    su desarrollo personal, social y emocional. Buscamos cultivar habilidades sociales, valores éticos y
+                    emocionales en los </p>
+                </li>
+                <li class="list-group-item  justify-content-between align-items-center">
+                  <h3>Promover la excelencia académica: </h3>
+                  <p>Nos esforzamos por promover la excelencia académica en todas las áreas de estudio. Buscamos
+                    estimular
+                    el pensamiento crítico, la creatividad, la investigación y el análisis en nuestros estudiantes.</p>
+                </li>
+                <li class="list-group-item  justify-content-between align-items-center">
+                  <h3>Preparar para el futuro laboral: </h3>
+                  <p>"Progreso Seguro" tiene como propósito preparar a los estudiantes para su futuro laboral. Esto
+                    implica ofrecer programas académicos y experiencias prácticas que les permitan adquirir habilidades
+                    y
+                    conocimientos relevantes para el mercado laboral actual y futuro.</p>
+                </li>
+                <li class="list-group-item  justify-content-between align-items-center">
+                  <h3>Fomentar el espíritu emprendedor:</h3>
+                  <p>Nos comprometemos a fomentar el espíritu emprendedor en nuestros estudiantes, brindándoles
+                    oportunidades para desarrollar habilidades empresariales, creatividad e innovación. Queremos
+                    inspirar a
+                    nuestros estudiantes a convertirse en líderes y agentes de cambio en sus comunidades.</p>
+                </li>
+                <li class="list-group-item  justify-content-between align-items-center">
+                  <h3>Promover la inclusión y la diversidad:</h3>
+                  <p>Valoramos la diversidad y nos esforzamos por crear un entorno inclusivo en "Progreso Seguro".
+                    Nuestro propósito es fomentar el respeto mutuo, la equidad y la celebración de la diversidad en
+                    todas
+                    sus formas.F</p>
+                </li>
+              </ul>
+            </div>
+            <div class="col-2"></div>
+          </div>
+        </div>
   </main>
   <footer>
     <!-- place footer here -->
+    <div id="contenidoFooter"></div>
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
+    </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+
+  <script>
+    var contenidoMenu = document.querySelector("#contenidoMenu");
+    var contenidoFooter = document.querySelector('#contenidoFooter')
+  </script>
+  <script src="js/footer.js"></script>
+  <script src="js/menu.js">
+  </script>
+
+  <script>
+    var triggerEl = document.querySelector('#navId a')
   </script>
 </body>
 
