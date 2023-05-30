@@ -16,6 +16,8 @@
 <body>
     <header>
         <!-- place navbar here -->
+        <div id="contenidoMenu"></div>
+
     </header>
     <main>
         <header>
@@ -106,6 +108,41 @@
             </div>
         </div>
 
+        <div class="modal fade" id="modalEliminar" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        role="dialog" aria-labelledby="Eliminar" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="Eliminar">Eliminar</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+    
+              <h5>Seguro que desea eliminar :</h5>
+              <form id="formulario">
+                <div class="mb-3">
+                  <label for="" class="form-label">Id</label>
+                  <input type="text" class="form-control" name="idEliminar" id="idEliminar"
+                    aria-describedby="helpId" placeholder="Ingresa el nombre del curso" disabled>
+                </div>
+    
+                <div class="mb-3">
+                  <label for="" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" name="nombreEliminar" id="nombreEliminar"
+                    aria-describedby="helpId" placeholder="Ingresa el nombre del curso" disabled>
+                </div>
+    
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" onclick="eliminar()">Aceptar</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </main>
     <footer>
         <!-- place footer here -->
@@ -119,6 +156,16 @@
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
         </script>
     <script src="js/cursos.js"></script>
+    <script>
+        var contenidoMenu = document.querySelector("#contenidoMenu");
+    </script>
+    <script src="js/menu.js">
+        
+    </script>
+    
+    <script>
+        var triggerEl = document.querySelector('#navId a')
+    </script>
 </body>
 
 </html>
