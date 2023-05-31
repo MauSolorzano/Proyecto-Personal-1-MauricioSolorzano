@@ -30,7 +30,12 @@ function setTable(datos) {
                      ||
                      <button id="Edit" type="button" class="btn btn-primary" 
                      onclick="actualizar('${valor.id}','${valor.nombre}')">Actualizar</button>
-                   </td>   
+                     ||
+                     <button id="Consultar" type="button" class="btn btn-success" 
+                     onclick="mostrarModalConsulta('${valor.id}','${valor.nombre}')">Ver datos</button>
+                   
+                   
+                     </td>   
                 </tr>`;
     }
 }
@@ -85,7 +90,13 @@ formulario.addEventListener('submit', function (e) {
             alert("Error al enviar los datos Catch");
         });
 });
-
+const modalConsulta = new bootstrap.Modal(document.getElementById('modalConsulta'))
+function mostrarModalConsulta(id, nombre) {
+    modalConsulta.show();
+    document.getElementById("idConsulta").value = id;
+     document.getElementById("nombreConsulta").value = nombre;
+    
+}
 const modalEliminar = new bootstrap.Modal(document.getElementById('modalEliminar'))
     function mostrarModalEliminar(id, nombre) {
       modalEliminar.show();

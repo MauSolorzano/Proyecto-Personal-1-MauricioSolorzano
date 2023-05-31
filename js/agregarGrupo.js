@@ -19,6 +19,8 @@ formulario.addEventListener('submit', function (e) {
         .then(respuesta => respuesta.json())
         .then((datosrespuesta) => {
             console.log('Datos', datosrespuesta)
+            window.location='grupos.html'
+
         })
         .catch(console.log)
 })

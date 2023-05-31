@@ -1,5 +1,19 @@
 
+var cargarGrupos = document.querySelector('#selectGrupo');
 
+function cargarGrupo() {
+    fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaGrupo.php")//url de peticion de datos
+        .then(respuesta => respuesta.json())//recibe los datos en formato json
+        .then((datosrespuesta) => {
+
+            for (const valor of datosrespuesta.data) {
+                cargarGrupos.innerHTML += `
+           <option value="${valor.id}">${valor.nombre}</option>`;
+            }
+        })
+        .catch(console.log)//muestra errores
+}
+cargarGrupo();
 
 //Declaracion de variable u objetos
 
@@ -58,6 +72,23 @@ function setTable(datos) {
                      ,'${valor.idCarreras}'
                      ,'${valor.usuario}'
                      )">Actualizar</button>
+                     ||
+                     <button id="Consultar" type="button" class="btn btn-success" 
+                     onclick="mostrarModalConsulta('${valor.id}'
+                     ,'${valor.cedula}'
+                     ,'${valor.correoelectronico}'
+                     ,'${valor.telefono}'
+                     ,'${valor.telefonocelular}'
+                     ,'${valor.fechanacimiento}'
+                     ,'${valor.sexo}'
+                     ,'${valor.direccion}'
+                     ,'${valor.nombre}'
+                     ,'${valor.apellidopaterno}'
+                     ,'${valor.apellidomaterno}'
+                     ,'${valor.nacionalidad}'
+                     ,'${valor.idCarreras}'
+                     ,'${valor.usuario}'
+                     )">Ver datos</button>
                    </td>   
                 </tr>`;
     }
@@ -150,13 +181,32 @@ formulario.addEventListener('submit', function (e) {
             alert("Error al enviar los datos Catch");
         });
 });
+const modalConsulta = new bootstrap.Modal(document.getElementById('modalConsulta'))
+function mostrarModalConsulta(id, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo,
+    direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, idCarreras, usuario) {
+    modalConsulta.show();
+    document.getElementById("idConsulta").value = id;
+    document.getElementById("cedulaConsulta").value = cedula;
+    document.getElementById("correoConsulta").value = correoelectronico;
+    document.getElementById("telefonoConsulta").value = telefono;
+    document.getElementById("celularConsulta").value = telefonocelular;
+    document.getElementById("fechaConsulta").value = fechanacimiento;
+    document.getElementById("sexoConsulta").value = sexo;
+    document.getElementById("direccionConsulta").value = direccion;
+    document.getElementById("nombreConsulta").value = nombre;
+    document.getElementById("paternoConsulta").value = apellidopaterno;
+    document.getElementById("maternoConsulta").value = apellidomaterno;
+    document.getElementById("nacionalidadConsulta").value = nacionalidad;
+    document.getElementById("IdCarreraConsulta").value = idCarreras;
+    document.getElementById("usuarioConsulta").value = usuario;
+}
 const modalEliminar = new bootstrap.Modal(document.getElementById('modalEliminar'))
-    function mostrarModalEliminar(id, nombre) {
-      modalEliminar.show();
+function mostrarModalEliminar(id, nombre) {
+    modalEliminar.show();
 
-      document.getElementById("idEliminar").value = id;
-      document.getElementById("nombreEliminar").value = nombre;
-    }
+    document.getElementById("idEliminar").value = id;
+    document.getElementById("nombreEliminar").value = nombre;
+}
 function eliminar() {
     let id = document.getElementById("idEliminar").value;
 

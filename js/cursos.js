@@ -39,6 +39,10 @@ function setTable(datos) {
                      <button id="Edit" type="button" class="btn btn-primary" 
                      onclick="actualizar('${valor.id}','${valor.nombre}','${valor.descripcion}'
                      ,'${valor.tiempo}','${valor.usuario}')">Actualizar</button>
+                     ||
+                     <button id="Consultar" type="button" class="btn btn-success " 
+                     onclick="mostrarModalConsulta('${valor.id}','${valor.nombre}','${valor.descripcion}'
+                     ,'${valor.tiempo}','${valor.usuario}')">Ver datos</button>
                    </td>   
                 </tr>`;
     }
@@ -106,13 +110,22 @@ formulario.addEventListener('submit', function (e) {
             alert("Error al enviar los datos Catch");
         });
 });
+const modalConsulta = new bootstrap.Modal(document.getElementById('modalConsulta'))
+function mostrarModalConsulta(id, nombre, descripcion, tiempo, usuario) {
+    modalConsulta.show();
+    document.getElementById('idConsulta').value = id;
+    document.getElementById('nombreConsulta').value= nombre;
+    document.getElementById('descripcionConsulta').value=descripcion;
+    document.getElementById('tiempoConsulta').value=tiempo;
+    document.getElementById('usuarioConsulta').value=usuario;
+}
 const modalEliminar = new bootstrap.Modal(document.getElementById('modalEliminar'))
-    function mostrarModalEliminar(id, nombre) {
-      modalEliminar.show();
+function mostrarModalEliminar(id, nombre) {
+    modalEliminar.show();
 
-      document.getElementById("idEliminar").value = id;
-      document.getElementById("nombreEliminar").value = nombre;
-    }
+    document.getElementById("idEliminar").value = id;
+    document.getElementById("nombreEliminar").value = nombre;
+}
 function eliminar() {
     let id = document.getElementById("idEliminar").value;
     var datosenviar = {

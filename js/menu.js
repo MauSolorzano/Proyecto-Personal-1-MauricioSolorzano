@@ -37,7 +37,7 @@ contenidoMenu.innerHTML += `
     <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Grupos</a>
     <div class="dropdown-menu">
-        <a class="dropdown-item" href="grupos.html">grupos</a>
+        <a class="dropdown-item" href="grupos.html">Grupos</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="agregarGrupos.html">Agregar grupos</a>  
     </div>

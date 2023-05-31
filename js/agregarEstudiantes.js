@@ -49,6 +49,7 @@ formulario1.addEventListener('submit', function (e) {
         .then(respuesta => respuesta.json())
         .then((datosrespuesta) => {
             console.log('Datos', datosrespuesta)
+            window.location='estudiantes.html'
         })
         .catch(console.log)
 })

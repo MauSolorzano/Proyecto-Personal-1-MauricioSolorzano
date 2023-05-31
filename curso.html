@@ -143,7 +143,52 @@
             </div>
         </div>
 
+        <div class="modal fade" id="modalConsulta" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+        role="dialog" aria-labelledby="Consultar" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="Consultar">Consular</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
 
+                    <form id="formulario">
+                        <div class="mb-3">
+                            <label for="" class="form-label">Id</label>
+                            <input type="text" class="form-control" name="idConsulta" id="idConsulta"
+                                aria-describedby="helpId" placeholder="Ingresa el ID del curso" disabled>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" name="nombreConsulta" id="nombreConsulta"
+                                aria-describedby="helpId" placeholder="nombreConsulta" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Descripcion</label>
+                            <input type="text" class="form-control" name="descripcionConsulta" id="descripcionConsulta"
+                                aria-describedby="helpId" placeholder="descripcionConsulta" disabled>
+                        </div><div class="mb-3">
+                            <label for="" class="form-label">Tiempo</label>
+                            <input type="text" class="form-control" name="tiempoConsulta" id="tiempoConsulta"
+                                aria-describedby="helpId" placeholder="tiempoConsulta" disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" name="usuarioConsulta" id="usuarioConsulta"
+                                aria-describedby="helpId" placeholder="usuarioConsulta" disabled>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-danger" onclick="eliminar()">Aceptar</button> -->
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     </main>
     <footer>
         <!-- place footer here -->
