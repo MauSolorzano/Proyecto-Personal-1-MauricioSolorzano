@@ -14,21 +14,21 @@ function cargarGrupo() {
 }
 cargarGrupo();
 /*{
-"id": "1234624",
-"cedula": "11111",
-"correoelectronico": "A@E",
-"telefono": "2",
-"telefonocelular": "1",
-"fechanacimiento": "2001-07-23",
-"sexo": "Masculino",
-"direccion": "2",
-"nombre": "2",
-"apellidopaterno": "2",
-"apellidomaterno": "2",
-"idCarreras": "170",
-"usuario": "Itzsosa",
-"nacionalidad": "2"
-}, */
+apis/ActualizarProfesores.php
+{ "id":2, 
+"cedula" : "8128128", 
+"correoelectronico":"marioaje@", 
+"telefono":"1212" , 
+"telefonocelular":"616161", 
+"fechanacimiento": "12-02-2002", 
+"sexo": "Masculino", 
+"direccion": "Mi casa" , 
+"nombre" : "Mari", 
+"apellidopaterno":"1primer", 
+"apellidomaterno": "2segundo", 
+"nacionalidad": "Costa Rica" , 
+"idCarreras": "1", 
+"usuario":"profesor Mario" }*/
 //Declaracion de variable u objetos
 
 var contenidoTablaResultado = document.querySelector('#resultados');
@@ -112,8 +112,8 @@ function setTable(datos) {
 
 const myModal = new bootstrap.Modal(document.getElementById('modalId'));
 
-function actualizar(id, cedula, correoelectronico, telefono,telefonocelular,fechanacimiento,
-    direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, usuario, idCarreras) {
+function actualizar(id, cedula, correoelectronico, telefono,telefonocelular,fechanacimiento, sexo,
+    direccion, nombre, apellidopaterno, apellidomaterno, nacionalidad, idCarreras,usuario) {
     console.log(actualizar);
     myModal.show();
     document.getElementById("id").value = id;
@@ -128,7 +128,7 @@ function actualizar(id, cedula, correoelectronico, telefono,telefonocelular,fech
     document.getElementById("apellidopaterno").value = apellidopaterno;
     document.getElementById("apellidomaterno").value = apellidomaterno;
     document.getElementById("nacionalidad").value=nacionalidad;
-    document.getElementById("idCarreras").value = idCarreras;
+    document.getElementById("selectGrupo").value = idCarreras;
     document.getElementById("usuario").value = usuario;
 
 }
@@ -153,7 +153,7 @@ formulario.addEventListener('submit', function (e) {
     let apellidopaterno = document.getElementById('apellidopaterno').value;
     let apellidomaterno = document.getElementById('apellidomaterno').value;
     let nacionalidad = document.getElementById('nacionalidad').value;
-    let idCarreras = document.getElementById('idCarreras').value;
+    let idCarreras = document.getElementById('selectGrupo').value;
     let usuario = document.getElementById('usuario').value;
 
     //Se guardan los datos recuperados en una variable
